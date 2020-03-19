@@ -39,7 +39,8 @@ RUN export DEBIAN_FRONTEND=noninteractive && \
     rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/* /tmp/* /var/tmp/*
 
 RUN wget --progress=dot:giga https://dl.influxdata.com/telegraf/releases/telegraf_${TELEGRAF_VERSION}_amd64.deb && \
-    dpkg -i telegraf_${TELEGRAF_VERSION}_amd64.deb
+    dpkg -i telegraf_${TELEGRAF_VERSION}_amd64.deb && \
+    rm telegraf_${TELEGRAF_VERSION}_amd64.deb
 
 ENV BUILD_DEPS="python-dev build-essential gfortran libssl-dev libffi-dev"
 RUN export DEBIAN_FRONTEND=noninteractive && \

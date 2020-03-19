@@ -6,7 +6,7 @@ In order to provide SSH agent with you key to the container use the following
 
 ```sh
 eval $(ssh-agent -s)
-cat ~/.ssh/id_rsa | ssh-add
+cat ~/.ssh/id_rsa | ssh-add -
 
 ```
 
